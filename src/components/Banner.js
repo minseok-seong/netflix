@@ -10,7 +10,6 @@ const Banner = () => {
 
   useEffect(() => {
     fetchData();
-    console.log("이펙트");
   }, []);
 
   const fetchData = async () => {
@@ -26,6 +25,7 @@ const Banner = () => {
       params: { append_to_response: "videos" },
     });
     setMovie(movieDetail);
+    console.log(request);
   };
   const truncate = (str, n) => {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
@@ -41,7 +41,6 @@ const Banner = () => {
           backgroundSize: "cover",
         }}
       >
-        {console.log("렌더")}
         <div className="banner__contents">
           <h1 className="banner__title">
             {movie.title || movie.name || movie.original_name}
