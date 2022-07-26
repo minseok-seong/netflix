@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./Nav.css";
 
 const Nav = () => {
@@ -28,12 +28,15 @@ const Nav = () => {
 
   return (
     <nav className={`nav ${show ? "nav_black" : null}`}>
-      <img
-        alt="Netflix logo"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/170px-Netflix_2015_logo.svg.png"
-        className="nav_logo"
-        onClick={() => window.location.reload()}
-      />
+      <Link to="/">
+        <img
+          alt="Netflix logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/170px-Netflix_2015_logo.svg.png"
+          className="nav_logo"
+          onClick={() => window.location.reload()}
+        />
+      </Link>
+
       <input
         value={searchValue}
         onChange={handleChange}
